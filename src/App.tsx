@@ -1,18 +1,26 @@
 import React, {Component} from "react";
-// @ts-ignore
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Home, MyChatBot } from "./components/index";
+
+import {MyChatBot } from "./components/index";
 import './App.css';
+import {Hello, Counter, Clock , Kitty} from "./components";
+import {Home} from "./pages";
+import {Provider} from 'react-redux'
+import {ConnectedRouter} from 'connected-react-router'
 
 class App extends Component<any, any>{
-  public render(){
-    return  <Router>
-      <Link to="/">홈으로 이동</Link> <br/>
-      <Link to="/chat">챗봇 이동</Link>
-      <Route exact path='/chat' component={MyChatBot}/>
-      <Route exact path='/' component={Home}/>
-    </Router>
+  public comment = {
+    date: new Date(),
+    text: 'I hope you enjoy learning React!',
+    author: {
+      name: 'Hello Kitty',
+      avatarUrl: 'https://placekitten.com/g/64/64',
+    },
   }
+
+  public render(){
+    return (<div><Home/></div>)
+
+  };
 }
 
 export default App;
