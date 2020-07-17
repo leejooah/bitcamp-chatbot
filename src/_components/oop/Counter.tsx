@@ -1,24 +1,27 @@
 import React, {Component} from "react";
+
 interface CounterProps {
-    startNumber : number
+    startNumber: number
 }
 
-class Counter extends Component<CounterProps>{
+class Counter extends Component<CounterProps> {
     public state = {
-        number:0
+        number: 0
     }
-    props : any
+    props: any
 
-    constructor(props : CounterProps) {
+    constructor(props: CounterProps) {
         super(props);
         this.state.number = props.startNumber
     }
+
     public handleClick = () => {
         this.setState({
-            number : this.state.number +1
+            number: this.state.number + 1
         })
     }
-    public render(){
+
+    public render() {
         return (<div>
             <h1>{this.state.number}</h1>
             <h1>{this.props.startNumber}</h1>

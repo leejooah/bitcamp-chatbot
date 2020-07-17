@@ -1,12 +1,15 @@
 import React, {Component} from "react";
 import ChatBot from 'react-simple-chatbot';
+
 interface State {
     name: string
 }
-class MyChatBot extends Component<State>{
+
+class MyChatBot extends Component<State> {
     state: State = {
         name: ''
     }
+
     public render() {
         return (
             <div>
@@ -44,4 +47,5 @@ class MyChatBot extends Component<State>{
         );
     }
 }
+
 export default MyChatBot

@@ -1,8 +1,8 @@
 import React from "react";
 import {Redirect} from 'react-router-dom'
 import {Home} from "../pages";
-import {Clock, Counter, Hello, Kitty, MyChatBot} from "../components";
-import AdvancedCounter from "../components/fp/AdvancedCounter";
+import {Clock, Counter, Hello, Kitty, MyChatBot} from "../_components";
+import AdvancedCounter from "../_components/fp/AdvancedCounter";
 
 const routerConfig = [
     {
@@ -16,23 +16,23 @@ const routerConfig = [
     },
     {
         path: '/chat',
-        component : MyChatBot
+        component: MyChatBot
     },
     {
         path: '/hello',
-        component : Hello
+        component: Hello
     },
     {
         path: '/clock',
-        component : Clock
+        component: Clock
     },
     {
         path: '/kitty',
-        component : Kitty
+        component: Kitty
     },
     {
         path: '/counter',
-        component : AdvancedCounter
+        component: AdvancedCounter
     }
 ]
 export default routerConfig
