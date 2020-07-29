@@ -1,45 +1,39 @@
 import React, {useState} from "react";
 import "user.css"
-import {connect} from "react-redux"
 /*Commands*/
-const userConstants= {
-    LOGIN_REQUEST : 'USER_LOGIN_REQUEST',
-    LOGIN_SUCCESS : 'USER_LOGIN_SUCCESS',
-    LOGIN_FAIL : 'USER_LOGIN_FAIL'
+const signinActions= {
+   REQUEST : 'signin/REQUEST',
+   SUCCESS : 'signin/SUCCESS',
+    FAILURE : 'signin/FAILURE'
 }
+export function request(member) { return {type : signinActions.REQUEST, member}}
+export function success(member) { return {type : signinActions.REQUEST, member}}
+export function failure(member) { return {type : signinActions.REQUEST, error}}
 
+const initState = {
+    userid : ' ',
+    password : ' '
+}
 const userActions = {
     login, logout, signup, remove, update
 }
 /*Reducers*/
-export function loginReducer(payload, userActions) { //prop로 두개를 던지는데 state와 action
-    switch (userActions) {
-        case  userConstants.LOGIN_REQUEST:
+export default function signin(state=initState, action) { //prop로 두개를 던지는데 state와 action
+    switch (action.type) {
+        case  signinActions.REQUEST:
             return {
                 user : payload
             }
-        case userConstants.LOGIN_SUCCESS:
+        case signinActions.SUCCESS:
             return {
                 user : payload
             }
-        case userConstants.LOGIN_FAIL:
+        case signinActions.FAILURE:
             return {
 
             }
     }
-    const action = (type, user) =>{
-        switch (type) {
-            case 'USER_LOGIN_REQUEST' :
-                return {type : type, user}
-                break
-            case 'USER_LOGIN_SUCCESS' :
-                return {type: type, user}
-                break
-            case 'USER_LOGIN_FAILURE' :
-                return {type: type, user}
-                break
-        }
-    }
+
 }
 
 /* Actions Function */
@@ -97,7 +91,7 @@ function loginService(userid, password) {
 
 /*Component*/
 
-const Login= ()=> {
+const Singin : React.FC= ()=> {
         const [userid, setUserid] = useState("")
         const [password, setPassword] = useState("")  //배열 비구조화 할당
         return <div>

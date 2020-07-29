@@ -4,7 +4,7 @@ import {MyChatBot} from "./_components/index";
 import './App.css';
 import {Hello, Counter, Clock, Kitty} from "./_components";
 import {Home} from "./pages";
-import {Provider} from 'react-redux'
+
 import {ConnectedRouter} from 'connected-react-router'
 
 class App extends Component<any, any> {
